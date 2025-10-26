@@ -3,22 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หน้าแรก (สำหรับสมาชิก)</title>
+    <title>ระบบล็อกอิน</title>
+
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
 
     <div class="container">
         
         <div id="userInfo">
-            <h2>ยินดีต้อนรับ!</h2>
-            <p style="font-size: 1.2rem;">สวัสดี, <span id="userName">...กำลังโหลด...</span>!</p>
-            <p>คุณได้เข้าสู่ระบบเรียบร้อยแล้ว</p>
-            
+            <p>สวัสดี, <span id="userName"></span>!</p>
             <button id="btnLogout">ออกจากระบบ</button>
         </div>
 
+        <div class="form-section" id="loginSection">
+            <h2>ล็อกอิน</h2>
+            <input type="email" id="loginEmail" placeholder="อีเมล">
+            <input type="password" id="loginPassword" placeholder="รหัสผ่าน">
+            <button id="btnLogin">ล็อกอิน</button>
         </div>
+
+        <p id="message"></p>
+
+        <div class="text-link">
+            <span>ยังไม่มีบัญชี? </span><a href="register.html">สมัครสมาชิกที่นี่</a>
+        </div>
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>

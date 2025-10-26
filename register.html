@@ -1,67 +1,40 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>สมัครสมาชิก</title>
-  <style>
-    body { font-family: Arial, sans-serif; background:#f0f2f5; height:100vh; margin:0; display:flex; align-items:center; justify-content:center; }
-    .container { width:320px; background:#fff; border-radius:8px; padding:24px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
-    h2 { text-align:center; margin:0 0 16px; color:#333; }
-    .form-group { margin-bottom:12px; }
-    label { display:block; font-weight:bold; margin-bottom:6px; }
-    input { width:100%; padding:10px; border:1px solid #ddd; border-radius:4px; box-sizing:border-box; }
-    button { width:100%; padding:10px; border:none; border-radius:4px; background:#28a745; color:#fff; font-weight:bold; cursor:pointer; }
-    button:hover { background:#1e7e34; }
-    .msg { margin-top:12px; text-align:center; }
-    .back { display:block; margin-top:10px; text-align:center; text-decoration:none; color:#007bff; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบล็อกอิน</title>
+
+    <link rel="stylesheet" href="style.css">
+    
 </head>
+
 <body>
-  <div class="container">
-    <h2>สมัครสมาชิก</h2>
-    <form id="regForm">
-      <div class="form-group">
-        <label for="username">ชื่อผู้ใช้ (Username):</label>
-        <input id="username" required />
-      </div>
-      <div class="form-group">
-        <label for="password">รหัสผ่าน (Password):</label>
-        <input id="password" type="password" required />
-      </div>
-      <button type="submit">สมัครสมาชิก</button>
-    </form>
-    <div class="msg" id="msg"></div>
-    <a class="back" href="index.html">กลับไปหน้าเข้าสู่ระบบ</a>
-  </div>
 
-  <script>
-    const form = document.getElementById('regForm');
-    const msgEl = document.getElementById('msg');
+    <div class="container">
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      msgEl.textContent = '';
-      const username = document.getElementById('username').value.trim();
-      const password = document.getElementById('password').value;
+        <div class="form-section" id="signupSection">
+            <h2>สร้างบัญชีใหม่</h2>
+            
+            <input type="text" id="signupName" placeholder="ชื่อ-นามสกุล">
+            <input type="email" id="signupEmail" placeholder="อีเมล">
+            <input type="password" id="signupPassword" placeholder="รหัสผ่าน (อย่างน้อย 6 ตัวอักษร)">
+            
+            <button id="btnSignup">สมัครสมาชิก</button>
+        </div>
 
-      try {
-        const resp = await fetch('/register', {
-          method:'POST',
-          headers:{ 'Content-Type':'application/json' },
-          body: JSON.stringify({ username, password })
-        });
-        const data = await resp.json();
-        if (data.ok) {
-          msgEl.textContent = 'สมัครสมาชิกสำเร็จแล้ว!';
-          // แสดงปุ่มกลับ (ลิงก์มีอยู่แล้ว)
-        } else {
-          msgEl.textContent = data.message || 'สมัครไม่สำเร็จ';
-        }
-      } catch (err) {
-        msgEl.textContent = 'เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์';
-      }
-    });
-  </script>
+        <p id="message"></p>
+
+        <div class="text-link">
+            <span>มีบัญชีอยู่แล้ว? </span><a href="login.html">ล็อกอินที่นี่</a>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+    <script src="server.js"></script>
+
 </body>
 </html>

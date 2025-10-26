@@ -1,0 +1,105 @@
+/* นำเข้าฟอนต์มาไว้ใน CSS แทน */
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
+
+body {
+    font-family: 'Sarabun', sans-serif;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f2f5;
+}
+
+.container {
+    background: #ffffff;
+    padding: 2.5rem 3rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column; /* เรียงแนวตั้ง */
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    border-bottom: none;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    font-family: 'Sarabun', sans-serif;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: 'Sarabun', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* สไตล์สำหรับลิงก์ */
+.text-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.95em;
+}
+.text-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 700;
+}
+.text-link a:hover {
+    text-decoration: underline;
+}
+
+/* ข้อความแจ้งเตือน */
+#message {
+    text-align: center;
+    font-size: 0.95em;
+    color: red;
+    margin-top: 1rem;
+    min-height: 1.2em;
+}
+
+/* ส่วนของข้อมูลผู้ใช้ (เมื่อล็อกอินแล้ว) */
+#userInfo {
+    display: none;
+    text-align: center;
+}
+#userInfo p {
+    font-size: 1.2rem;
+    color: #333;
+}
+#btnLogout {
+    background-color: #dc3545; /* สีแดงสำหรับปุ่ม Logout */
+}
+#btnLogout:hover {
+    background-color: #c82333;
+}
