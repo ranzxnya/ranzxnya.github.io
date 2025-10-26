@@ -49,7 +49,7 @@ if (btnSignup) {
                     createdAt: firebase.firestore.FieldValue.serverTimestamp()
                 })
                 .then(() => {
-                    setTimeout(() => { window.location.href = "login.html"; }, 2000);
+                    setTimeout(() => { window.location.href = "index.html"; }, 2000);
                 });
             })
             .catch((error) => {
@@ -61,7 +61,7 @@ if (btnSignup) {
     });
 }
 
-// --- 2. ฟังก์ชันล็อกอิน (สำหรับ login.html) ---
+// --- 2. ฟังก์ชันล็อกอิน (สำหรับ .index.html) ---
 if (btnLogin) {
     btnLogin.addEventListener("click", () => {
         // (ส่วนนี้ทำงานปกติ)
@@ -95,7 +95,7 @@ if (btnLogout) {
     btnLogout.addEventListener("click", () => {
         // (ส่วนนี้ทำงานปกติ)
         auth.signOut().then(() => {
-            window.location.href = "login.html";
+            window.location.href = "index.html";
         });
     });
 }
@@ -138,7 +138,7 @@ function showContainer() {
         // --- (A) ผู้ใช้ล็อกอินอยู่ ---
 
         // 1. ถ้าล็อกอินแล้ว แต่ดันอยู่หน้า login หรือ register
-        if (currentPage === "login.html" || currentPage === "register.html") {
+        if (currentPage === "index.html" || currentPage === "register.html") {
             window.location.href = "page1.html"; // เด้งไปหน้า page1
             return; // ไม่ต้องทำอะไรต่อ
         }
@@ -160,7 +160,7 @@ function showContainer() {
 
         // 1. ถ้ายังไม่ล็อกอิน แต่พยายามเข้าหน้า page1
         if (currentPage === "page1.html") { 
-            window.location.href = "login.html"; // เด้งกลับไปหน้า login
+            window.location.href = "index.html"; // เด้งกลับไปหน้า login
             return; // ไม่ต้องทำอะไรต่อ
         }
 
