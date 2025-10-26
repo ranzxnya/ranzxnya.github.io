@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าล็อคอิน</title>
+    <style>
+        /* CSS สำหรับจัดสไตล์หน้าเว็บ */
+        body {
+            font-family: Arial, sans-serif; /* ตั้งค่าฟอนต์ */
+            background-color: #f0f2f5; /* สีพื้นหลังเทาอ่อน */
+            display: flex;
+            justify-content: center; /* จัดให้อยู่กลางแนวนอน */
+            align-items: center; /* จัดให้อยู่กลางแนวตั้ง */
+            height: 100vh; /* ให้เต็มความสูงของหน้าจอ */
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: #ffffff; /* สีขาว */
+            padding: 2rem; /* ระยะห่างภายใน */
+            border-radius: 8px; /* ขอบโค้งมน */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* เงา */
+            width: 300px; /* ความกว้างของกล่องล็อคอิน */
+            text-align: center; /* จัดข้อความให้อยู่กลาง */
+        }
+
+        .login-container h2 {
+            margin-bottom: 1.5rem; /* ระยะห่างด้านล่างของหัวข้อ */
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 1rem; /* ระยะห่างระหว่างกลุ่มฟอร์ม */
+            text-align: left; /* จัดข้อความในกลุ่มฟอร์มชิดซ้าย */
+        }
+
+        .form-group label {
+            display: block; /* ให้ป้ายกำกับแสดงเป็นบล็อก (ขึ้นบรรทัดใหม่) */
+            margin-bottom: 0.5rem; /* ระยะห่างล่าง */
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%; /* ความกว้างเต็ม */
+            padding: 0.75rem; /* ระยะห่างภายในช่องกรอก */
+            border: 1px solid #ddd; /* เส้นขอบ */
+            border-radius: 4px; /* ขอบโค้งมน */
+            box-sizing: border-box; /* ป้องกัน padding ทำให้ความกว้างเกิน */
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff; /* สีฟ้า */
+            color: white; /* สีตัวอักษร */
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer; /* เปลี่ยนเมาส์เป็นรูปมือ */
+            transition: background-color 0.3s ease; /* เอฟเฟกต์ตอน hover */
+        }
+
+        .login-button:hover {
+            background-color: #0056b3; /* สีฟ้าเข้มขึ้นเมื่อเมาส์ชี้ */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>เข้าสู่ระบบ</h2>
+        
+        <form action="#" method="POST">
+            
+            <div class="form-group">
+                <label for="username">ชื่อผู้ใช้ (Username):</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">รหัสผ่าน (Password):</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <button type="submit" class="login-button">ล็อคอิน</button>
+            
+        </form>
+    </div>
+
+</body>
+</html>
