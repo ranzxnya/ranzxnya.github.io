@@ -159,7 +159,7 @@ function showContainer() {
         // --- (B) ผู้ใช้ยังไม่ล็อกอิน ---
 
         // 1. ถ้ายังไม่ล็อกอิน แต่พยายามเข้าหน้า page1
-        if (currentPage === "page1.html") { 
+        if (currentPage === "https://www.tinkercad.com/things/86fCHXx7U9S/editel") { 
             window.location.href = "index.html"; // เด้งกลับไปหน้า login
             return; // ไม่ต้องทำอะไรต่อ
         }
